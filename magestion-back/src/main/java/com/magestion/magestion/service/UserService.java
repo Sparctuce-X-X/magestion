@@ -32,4 +32,8 @@ public class UserService {
         repository.deleteById(id);
     }
 
+    public User findByNom(String nom) {
+        return repository.findByNom(nom);
+    }
+
 }
