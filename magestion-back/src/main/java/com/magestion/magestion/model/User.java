@@ -19,6 +19,15 @@ public class User {
     private String nom;
 
     @NotBlank
+    private String email;
+
+    @NotBlank
+    private String statut; // 'actif', 'inactif'
+
+    private String dateCreation;
+    private String derniereConnexion;
+
+    @NotBlank
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -28,10 +37,14 @@ public class User {
     public User() {
     }
     
-    public User(String nom, String password, Role role) {
+    public User(String nom, String email, String password, Role role, String statut, String dateCreation, String derniereConnexion) {
         this.nom = nom;
+        this.email = email;
         this.password = password;
         this.role = role;
+        this.statut = statut;
+        this.dateCreation = dateCreation;
+        this.derniereConnexion = derniereConnexion;
     }
 
     public long getId() {
@@ -48,6 +61,38 @@ public class User {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getStatut() {
+        return statut;
+    }
+
+    public void setStatut(String statut) {
+        this.statut = statut;
+    }
+
+    public String getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(String dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public String getDerniereConnexion() {
+        return derniereConnexion;
+    }
+
+    public void setDerniereConnexion(String derniereConnexion) {
+        this.derniereConnexion = derniereConnexion;
     }
 
     public String getPassword() {

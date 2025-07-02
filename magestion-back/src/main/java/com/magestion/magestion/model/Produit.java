@@ -19,13 +19,17 @@ public class Produit {
     @Positive
     private int stock;
 
+    @NotBlank
+    private String categorie;
+
     public Produit(){}
 
-    //Constructeur
-    public Produit(String nom , double prix , int stock ){
+    // Constructeur complet
+    public Produit(String nom, double prix, int stock, String categorie) {
         this.nom = nom;
         this.prix = prix;
         this.stock = stock;
+        this.categorie = categorie;
     }
 
     // Getters & Setters
@@ -60,4 +64,11 @@ public class Produit {
         this.stock = stock;
     }
 
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
 }
